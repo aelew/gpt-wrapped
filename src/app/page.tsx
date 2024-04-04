@@ -1,5 +1,5 @@
 import { QuestionMarkCircledIcon } from '@radix-ui/react-icons';
-import { ArrowRightIcon, EyeIcon } from 'lucide-react';
+import { EyeIcon } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -47,8 +47,7 @@ export default function HomePage() {
         </Button>
       </div>
       <Button className="group" variant="outline">
-        Analyze all conversations instead
-        <ArrowRightIcon className="ml-1 inline-block size-4 translate-x-0 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5" />
+        I want insights on all my conversations!
       </Button>
     </section>
   );
