@@ -1,0 +1,526 @@
+{
+  "type": "data",
+  "data": {
+    "title": "AI Icon vs Manual",
+    "create_time": 1712220372.119576,
+    "update_time": 1712220373,
+    "mapping": {
+      "020dc628-247e-4c92-b2ad-c155ad7a0dec": {
+        "id": "020dc628-247e-4c92-b2ad-c155ad7a0dec",
+        "message": {
+          "id": "020dc628-247e-4c92-b2ad-c155ad7a0dec",
+          "author": {
+            "role": "assistant",
+            "metadata": {}
+          },
+          "create_time": 1711321144.614598,
+          "content": {
+            "content_type": "text",
+            "parts": [
+              "\"Revolutionize Your Design Costs: Icon Generation Made 1000x More Affordable with AI\""
+            ]
+          },
+          "status": "finished_successfully",
+          "end_turn": true,
+          "weight": 1,
+          "metadata": {
+            "finish_details": {
+              "type": "stop",
+              "stop_tokens": [
+                100260
+              ]
+            },
+            "citations": [],
+            "is_complete": true,
+            "model_slug": "text-davinci-002-render-sha",
+            "default_model_slug": "text-davinci-002-render-sha",
+            "pad": "AAAAAAA",
+            "parent_id": "aaa29d20-a7bc-429a-abdb-0874e124ade1",
+            "request_id": "869a44fbe947d03d-SJC",
+            "timestamp_": "absolute",
+            "shared_conversation_id": "03726630-641f-4692-89eb-9c1c469a1674"
+          },
+          "recipient": "all"
+        },
+        "parent": "aaa29d20-a7bc-429a-abdb-0874e124ade1",
+        "children": []
+      },
+      "aaa29d20-a7bc-429a-abdb-0874e124ade1": {
+        "id": "aaa29d20-a7bc-429a-abdb-0874e124ade1",
+        "message": {
+          "id": "aaa29d20-a7bc-429a-abdb-0874e124ade1",
+          "author": {
+            "role": "user",
+            "metadata": {}
+          },
+          "create_time": 1711321143.987049,
+          "content": {
+            "content_type": "text",
+            "parts": [
+              "i want something like 1000x cheaper than a designer but different"
+            ]
+          },
+          "status": "finished_successfully",
+          "weight": 1,
+          "metadata": {
+            "request_id": "869a44fbe947d03d-SJC",
+            "timestamp_": "absolute",
+            "shared_conversation_id": "03726630-641f-4692-89eb-9c1c469a1674"
+          },
+          "recipient": "all"
+        },
+        "parent": "87393f8c-dca8-4d71-8e29-104996ba1af4",
+        "children": [
+          "020dc628-247e-4c92-b2ad-c155ad7a0dec"
+        ]
+      },
+      "87393f8c-dca8-4d71-8e29-104996ba1af4": {
+        "id": "87393f8c-dca8-4d71-8e29-104996ba1af4",
+        "message": {
+          "id": "87393f8c-dca8-4d71-8e29-104996ba1af4",
+          "author": {
+            "role": "assistant",
+            "metadata": {}
+          },
+          "create_time": 1711321085.529542,
+          "content": {
+            "content_type": "text",
+            "parts": [
+              "\"Frustrated with Design Costs?\nIcon Generation Without AI Icon Generator vs. AI-Powered Efficiency\""
+            ]
+          },
+          "status": "finished_successfully",
+          "end_turn": true,
+          "weight": 1,
+          "metadata": {
+            "finish_details": {
+              "type": "stop",
+              "stop_tokens": [
+                100260
+              ]
+            },
+            "citations": [],
+            "is_complete": true,
+            "model_slug": "text-davinci-002-render-sha",
+            "default_model_slug": "text-davinci-002-render-sha",
+            "pad": "AAAAAAAAAAAAAAAAAAAAAAAA",
+            "parent_id": "aaa2c670-e0be-4762-b8d5-9949a71adbee",
+            "request_id": "869a438c59ea15ed-SJC",
+            "timestamp_": "absolute",
+            "shared_conversation_id": "03726630-641f-4692-89eb-9c1c469a1674"
+          },
+          "recipient": "all"
+        },
+        "parent": "aaa2c670-e0be-4762-b8d5-9949a71adbee",
+        "children": [
+          "aaa29d20-a7bc-429a-abdb-0874e124ade1"
+        ]
+      },
+      "aaa2c670-e0be-4762-b8d5-9949a71adbee": {
+        "id": "aaa2c670-e0be-4762-b8d5-9949a71adbee",
+        "message": {
+          "id": "aaa2c670-e0be-4762-b8d5-9949a71adbee",
+          "author": {
+            "role": "user",
+            "metadata": {}
+          },
+          "create_time": 1711321084.993949,
+          "content": {
+            "content_type": "text",
+            "parts": [
+              "create a title too, like Tired of managing Stripe invoices?\nsomething about price than designer"
+            ]
+          },
+          "status": "finished_successfully",
+          "weight": 1,
+          "metadata": {
+            "request_id": "869a438c59ea15ed-SJC",
+            "timestamp_": "absolute",
+            "shared_conversation_id": "03726630-641f-4692-89eb-9c1c469a1674"
+          },
+          "recipient": "all"
+        },
+        "parent": "84e60cc6-d42c-4a57-abab-6e6da9c7e39f",
+        "children": [
+          "87393f8c-dca8-4d71-8e29-104996ba1af4"
+        ]
+      },
+      "84e60cc6-d42c-4a57-abab-6e6da9c7e39f": {
+        "id": "84e60cc6-d42c-4a57-abab-6e6da9c7e39f",
+        "message": {
+          "id": "84e60cc6-d42c-4a57-abab-6e6da9c7e39f",
+          "author": {
+            "role": "assistant",
+            "metadata": {}
+          },
+          "create_time": 1711320968.862531,
+          "content": {
+            "content_type": "text",
+            "parts": [
+              "Icon Generator Without AI Icon Generator\n\nCreate icons manually\nOr pay high fees for each icon\nSpend hours designing icons\nLimited customization options\nCan't update icons easily\n\nIcon Generator + AI Icon Generator\n\nAutomated icon creation\nOne-time payment for unlimited icons\nNo design skills needed\nEndless customization possibilities\nEasily update and modify icons"
+            ]
+          },
+          "status": "finished_successfully",
+          "end_turn": true,
+          "weight": 1,
+          "metadata": {
+            "finish_details": {
+              "type": "stop",
+              "stop_tokens": [
+                100260
+              ]
+            },
+            "citations": [],
+            "is_complete": true,
+            "model_slug": "text-davinci-002-render-sha",
+            "default_model_slug": "text-davinci-002-render-sha",
+            "pad": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "parent_id": "aaa223f8-5a07-4843-abec-a5709c50f45c",
+            "request_id": "869a40b00f477af7-SJC",
+            "timestamp_": "absolute",
+            "shared_conversation_id": "03726630-641f-4692-89eb-9c1c469a1674"
+          },
+          "recipient": "all"
+        },
+        "parent": "aaa223f8-5a07-4843-abec-a5709c50f45c",
+        "children": [
+          "aaa2c670-e0be-4762-b8d5-9949a71adbee"
+        ]
+      },
+      "aaa223f8-5a07-4843-abec-a5709c50f45c": {
+        "id": "aaa223f8-5a07-4843-abec-a5709c50f45c",
+        "message": {
+          "id": "aaa223f8-5a07-4843-abec-a5709c50f45c",
+          "author": {
+            "role": "user",
+            "metadata": {}
+          },
+          "create_time": 1711320967.84683,
+          "content": {
+            "content_type": "text",
+            "parts": [
+              "Tired of managing Stripe invoices?\nStripe invoices without ZenVoice\n\nManually create invoices\nOr pay up to $2 per invoice\nWaste hours in customer support\nCan’t update details once sent (VAT, Tax ID)\n\n    Can't make invoices for previous purchases\n\nStripe invoices + ZenVoice\n\nSelf-serve invoices\nOne-time payment for unlimited invoices\nNo more customer support\nEditable invoices to stay compliant\nInvoices for any payment, even past ones\n\ncreate someting like this for an icon generator vs designers (ai icon generator better)"
+            ]
+          },
+          "status": "finished_successfully",
+          "weight": 1,
+          "metadata": {
+            "request_id": "869a40b00f477af7-SJC",
+            "timestamp_": "absolute",
+            "shared_conversation_id": "03726630-641f-4692-89eb-9c1c469a1674"
+          },
+          "recipient": "all"
+        },
+        "parent": "24c352ab-8526-46e2-a538-dad2276cbc80",
+        "children": [
+          "84e60cc6-d42c-4a57-abab-6e6da9c7e39f"
+        ]
+      },
+      "24c352ab-8526-46e2-a538-dad2276cbc80": {
+        "id": "24c352ab-8526-46e2-a538-dad2276cbc80",
+        "message": {
+          "id": "24c352ab-8526-46e2-a538-dad2276cbc80",
+          "author": {
+            "role": "system",
+            "metadata": {}
+          },
+          "content": {
+            "content_type": "text",
+            "parts": [
+              ""
+            ]
+          },
+          "status": "finished_successfully",
+          "end_turn": true,
+          "weight": 0,
+          "metadata": {
+            "is_visually_hidden_from_conversation": true,
+            "shared_conversation_id": "03726630-641f-4692-89eb-9c1c469a1674"
+          },
+          "recipient": "all"
+        },
+        "parent": "aaa16934-e804-403a-aaf1-d2e1ac3bb58e",
+        "children": [
+          "aaa223f8-5a07-4843-abec-a5709c50f45c"
+        ]
+      },
+      "aaa16934-e804-403a-aaf1-d2e1ac3bb58e": {
+        "id": "aaa16934-e804-403a-aaf1-d2e1ac3bb58e",
+        "children": [
+          "24c352ab-8526-46e2-a538-dad2276cbc80"
+        ]
+      }
+    },
+    "moderation_results": [],
+    "current_node": "020dc628-247e-4c92-b2ad-c155ad7a0dec",
+    "conversation_id": "03726630-641f-4692-89eb-9c1c469a1674",
+    "is_archived": false,
+    "safe_urls": [],
+    "is_public": true,
+    "linear_conversation": [
+      {
+        "id": "aaa16934-e804-403a-aaf1-d2e1ac3bb58e",
+        "children": [
+          "24c352ab-8526-46e2-a538-dad2276cbc80"
+        ]
+      },
+      {
+        "id": "24c352ab-8526-46e2-a538-dad2276cbc80",
+        "message": {
+          "id": "24c352ab-8526-46e2-a538-dad2276cbc80",
+          "author": {
+            "role": "system",
+            "metadata": {}
+          },
+          "content": {
+            "content_type": "text",
+            "parts": [
+              ""
+            ]
+          },
+          "status": "finished_successfully",
+          "end_turn": true,
+          "weight": 0,
+          "metadata": {
+            "is_visually_hidden_from_conversation": true,
+            "shared_conversation_id": "03726630-641f-4692-89eb-9c1c469a1674"
+          },
+          "recipient": "all"
+        },
+        "parent": "aaa16934-e804-403a-aaf1-d2e1ac3bb58e",
+        "children": [
+          "aaa223f8-5a07-4843-abec-a5709c50f45c"
+        ]
+      },
+      {
+        "id": "aaa223f8-5a07-4843-abec-a5709c50f45c",
+        "message": {
+          "id": "aaa223f8-5a07-4843-abec-a5709c50f45c",
+          "author": {
+            "role": "user",
+            "metadata": {}
+          },
+          "create_time": 1711320967.84683,
+          "content": {
+            "content_type": "text",
+            "parts": [
+              "Tired of managing Stripe invoices?\nStripe invoices without ZenVoice\n\nManually create invoices\nOr pay up to $2 per invoice\nWaste hours in customer support\nCan’t update details once sent (VAT, Tax ID)\n\n    Can't make invoices for previous purchases\n\nStripe invoices + ZenVoice\n\nSelf-serve invoices\nOne-time payment for unlimited invoices\nNo more customer support\nEditable invoices to stay compliant\nInvoices for any payment, even past ones\n\ncreate someting like this for an icon generator vs designers (ai icon generator better)"
+            ]
+          },
+          "status": "finished_successfully",
+          "weight": 1,
+          "metadata": {
+            "request_id": "869a40b00f477af7-SJC",
+            "timestamp_": "absolute",
+            "shared_conversation_id": "03726630-641f-4692-89eb-9c1c469a1674"
+          },
+          "recipient": "all"
+        },
+        "parent": "24c352ab-8526-46e2-a538-dad2276cbc80",
+        "children": [
+          "84e60cc6-d42c-4a57-abab-6e6da9c7e39f"
+        ]
+      },
+      {
+        "id": "84e60cc6-d42c-4a57-abab-6e6da9c7e39f",
+        "message": {
+          "id": "84e60cc6-d42c-4a57-abab-6e6da9c7e39f",
+          "author": {
+            "role": "assistant",
+            "metadata": {}
+          },
+          "create_time": 1711320968.862531,
+          "content": {
+            "content_type": "text",
+            "parts": [
+              "Icon Generator Without AI Icon Generator\n\nCreate icons manually\nOr pay high fees for each icon\nSpend hours designing icons\nLimited customization options\nCan't update icons easily\n\nIcon Generator + AI Icon Generator\n\nAutomated icon creation\nOne-time payment for unlimited icons\nNo design skills needed\nEndless customization possibilities\nEasily update and modify icons"
+            ]
+          },
+          "status": "finished_successfully",
+          "end_turn": true,
+          "weight": 1,
+          "metadata": {
+            "finish_details": {
+              "type": "stop",
+              "stop_tokens": [
+                100260
+              ]
+            },
+            "citations": [],
+            "is_complete": true,
+            "model_slug": "text-davinci-002-render-sha",
+            "default_model_slug": "text-davinci-002-render-sha",
+            "pad": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "parent_id": "aaa223f8-5a07-4843-abec-a5709c50f45c",
+            "request_id": "869a40b00f477af7-SJC",
+            "timestamp_": "absolute",
+            "shared_conversation_id": "03726630-641f-4692-89eb-9c1c469a1674"
+          },
+          "recipient": "all"
+        },
+        "parent": "aaa223f8-5a07-4843-abec-a5709c50f45c",
+        "children": [
+          "aaa2c670-e0be-4762-b8d5-9949a71adbee"
+        ]
+      },
+      {
+        "id": "aaa2c670-e0be-4762-b8d5-9949a71adbee",
+        "message": {
+          "id": "aaa2c670-e0be-4762-b8d5-9949a71adbee",
+          "author": {
+            "role": "user",
+            "metadata": {}
+          },
+          "create_time": 1711321084.993949,
+          "content": {
+            "content_type": "text",
+            "parts": [
+              "create a title too, like Tired of managing Stripe invoices?\nsomething about price than designer"
+            ]
+          },
+          "status": "finished_successfully",
+          "weight": 1,
+          "metadata": {
+            "request_id": "869a438c59ea15ed-SJC",
+            "timestamp_": "absolute",
+            "shared_conversation_id": "03726630-641f-4692-89eb-9c1c469a1674"
+          },
+          "recipient": "all"
+        },
+        "parent": "84e60cc6-d42c-4a57-abab-6e6da9c7e39f",
+        "children": [
+          "87393f8c-dca8-4d71-8e29-104996ba1af4"
+        ]
+      },
+      {
+        "id": "87393f8c-dca8-4d71-8e29-104996ba1af4",
+        "message": {
+          "id": "87393f8c-dca8-4d71-8e29-104996ba1af4",
+          "author": {
+            "role": "assistant",
+            "metadata": {}
+          },
+          "create_time": 1711321085.529542,
+          "content": {
+            "content_type": "text",
+            "parts": [
+              "\"Frustrated with Design Costs?\nIcon Generation Without AI Icon Generator vs. AI-Powered Efficiency\""
+            ]
+          },
+          "status": "finished_successfully",
+          "end_turn": true,
+          "weight": 1,
+          "metadata": {
+            "finish_details": {
+              "type": "stop",
+              "stop_tokens": [
+                100260
+              ]
+            },
+            "citations": [],
+            "is_complete": true,
+            "model_slug": "text-davinci-002-render-sha",
+            "default_model_slug": "text-davinci-002-render-sha",
+            "pad": "AAAAAAAAAAAAAAAAAAAAAAAA",
+            "parent_id": "aaa2c670-e0be-4762-b8d5-9949a71adbee",
+            "request_id": "869a438c59ea15ed-SJC",
+            "timestamp_": "absolute",
+            "shared_conversation_id": "03726630-641f-4692-89eb-9c1c469a1674"
+          },
+          "recipient": "all"
+        },
+        "parent": "aaa2c670-e0be-4762-b8d5-9949a71adbee",
+        "children": [
+          "aaa29d20-a7bc-429a-abdb-0874e124ade1"
+        ]
+      },
+      {
+        "id": "aaa29d20-a7bc-429a-abdb-0874e124ade1",
+        "message": {
+          "id": "aaa29d20-a7bc-429a-abdb-0874e124ade1",
+          "author": {
+            "role": "user",
+            "metadata": {}
+          },
+          "create_time": 1711321143.987049,
+          "content": {
+            "content_type": "text",
+            "parts": [
+              "i want something like 1000x cheaper than a designer but different"
+            ]
+          },
+          "status": "finished_successfully",
+          "weight": 1,
+          "metadata": {
+            "request_id": "869a44fbe947d03d-SJC",
+            "timestamp_": "absolute",
+            "shared_conversation_id": "03726630-641f-4692-89eb-9c1c469a1674"
+          },
+          "recipient": "all"
+        },
+        "parent": "87393f8c-dca8-4d71-8e29-104996ba1af4",
+        "children": [
+          "020dc628-247e-4c92-b2ad-c155ad7a0dec"
+        ]
+      },
+      {
+        "id": "020dc628-247e-4c92-b2ad-c155ad7a0dec",
+        "message": {
+          "id": "020dc628-247e-4c92-b2ad-c155ad7a0dec",
+          "author": {
+            "role": "assistant",
+            "metadata": {}
+          },
+          "create_time": 1711321144.614598,
+          "content": {
+            "content_type": "text",
+            "parts": [
+              "\"Revolutionize Your Design Costs: Icon Generation Made 1000x More Affordable with AI\""
+            ]
+          },
+          "status": "finished_successfully",
+          "end_turn": true,
+          "weight": 1,
+          "metadata": {
+            "finish_details": {
+              "type": "stop",
+              "stop_tokens": [
+                100260
+              ]
+            },
+            "citations": [],
+            "is_complete": true,
+            "model_slug": "text-davinci-002-render-sha",
+            "default_model_slug": "text-davinci-002-render-sha",
+            "pad": "AAAAAAA",
+            "parent_id": "aaa29d20-a7bc-429a-abdb-0874e124ade1",
+            "request_id": "869a44fbe947d03d-SJC",
+            "timestamp_": "absolute",
+            "shared_conversation_id": "03726630-641f-4692-89eb-9c1c469a1674"
+          },
+          "recipient": "all"
+        },
+        "parent": "aaa29d20-a7bc-429a-abdb-0874e124ade1",
+        "children": []
+      }
+    ],
+    "has_user_editable_context": false,
+    "continue_conversation_url": "https://chat.openai.com/share/03726630-641f-4692-89eb-9c1c469a1674/continue",
+    "model": {
+      "slug": "text-davinci-002-render-sha",
+      "max_tokens": 8191,
+      "title": "Default (GPT-3.5)",
+      "description": "Our fastest model, great for most everyday tasks.",
+      "tags": [
+        "gpt3.5"
+      ]
+    },
+    "moderation_state": {
+      "has_been_moderated": false,
+      "has_been_blocked": false,
+      "has_been_accepted": false,
+      "has_been_auto_blocked": false,
+      "has_been_auto_moderated": false
+    }
+  }
+}
