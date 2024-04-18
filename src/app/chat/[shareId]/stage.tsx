@@ -46,11 +46,29 @@ import '@splidejs/react-splide/css/sea-green';
 import Image from 'next/image';
 import { toast } from 'sonner';
 
-export function Stage({ chat }: { chat: Chat }) {
+export function Stage({
+  chat,
+  completion
+}: {
+  chat: Chat;
+  completion: {
+    tone: string;
+    topic: string;
+    summary: string;
+    summary_comment: string;
+    system_prompt: string;
+  };
+}) {
   function calculateChatDuration() {
     // Assuming chatData is the JSON object you provided
-    const startTime = chat.create_time; // Start time of the chat
-    const endTime = chat.update_time; // End time of the chat
+    const messages = chat.linear_conversation.filter(
+      (c) => c.message?.create_time
+    );
+
+    const startTime = messages[0].message!.create_time; // Start time of the chat
+    const endTime = messages[messages.length - 1].message!.create_time; // End time of the chat
+
+    console.log(startTime, endTime);
 
     // Calculate duration in seconds
     const durationInSeconds = endTime - startTime;
@@ -173,8 +191,8 @@ export function Stage({ chat }: { chat: Chat }) {
               whileInView={{ opacity: 1 }}
               transition={{ delay: 3.5 }}
             >
-              {duration[1].startsWith('second')
-                ? "Blink and you'll miss it &mdash; your chat session, that is. Speedy Gonzalez has nothing on you. Was that a chat or a race?"
+              {duration[1].startsWith('second') || duration[0] < 3
+                ? "Blink and you'll miss it — your chat session, that is. Speedy Gonzalez has nothing on you. Was that a chat or a race?"
                 : "Wow. That's a long chat! How about you go outside and get some sunlight? Stretch those legs!"}
             </motion.p>
           </div>
@@ -221,7 +239,7 @@ export function Stage({ chat }: { chat: Chat }) {
               <div>
                 <p className="text-lg">💡 Your tone was&hellip;</p>
                 <p className="inline-block bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-3xl font-bold tracking-tight text-transparent">
-                  Neutral, curious
+                  {completion.tone}
                   {/* Polite, inquisitive */}
                 </p>
               </div>
@@ -244,7 +262,7 @@ export function Stage({ chat }: { chat: Chat }) {
               <div>
                 <p className="text-lg">Chat topic</p>
                 <p className="inline-block bg-gradient-to-r from-violet-400 to-violet-700 bg-clip-text text-3xl font-bold tracking-tight text-transparent">
-                  Code help
+                  {completion.topic}
                 </p>
               </div>
             </Card>
@@ -252,10 +270,7 @@ export function Stage({ chat }: { chat: Chat }) {
               <CardHeader>
                 <CardTitle>Conversation summary</CardTitle>
                 <CardDescription className="select-text">
-                  You asked for help with a coding problem, and ChatGPT provided
-                  a detailed explanation of the solution. ChatGPT appears to
-                  have been was and informative, and you were able to understand
-                  the solution.
+                  {completion.summary}
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -265,8 +280,9 @@ export function Stage({ chat }: { chat: Chat }) {
               whileInView={{ opacity: 1 }}
               transition={{ delay: 1 }}
             >
-              You sought assistance with a coding-related issue, and ChatGPT
-              provided a detailed explanation that you were able to understand.
+              {completion.summary_comment}
+              {/* You sought assistance with a coding-related issue, and ChatGPT
+              provided a detailed explanation that you were able to understand. */}
             </motion.p>
           </div>
         </SplideSlide>
@@ -276,10 +292,11 @@ export function Stage({ chat }: { chat: Chat }) {
               <CardHeader>
                 <CardTitle>Suggested system prompt</CardTitle>
                 <CardDescription className="select-text">
-                  Convert the provided OpenGL code snippet to use LWJGL 3.
+                  {completion.system_prompt}
+                  {/* Convert the provided OpenGL code snippet to use LWJGL 3.
                   Ensure that you have imported the necessary LWJGL classes,
                   such as org.lwjgl.opengl.GL11, and initialized your OpenGL
-                  context properly before calling these functions.
+                  context properly before calling these functions. */}
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -301,32 +318,38 @@ export function Stage({ chat }: { chat: Chat }) {
             animate={{ opacity: 1 }}
             ref={ref}
           >
-            <div className="grid grid-cols-7 gap-4">
-              <Card className="relative col-span-4 p-6">
+            <div className="grid grid-cols-12 gap-4">
+              <Card className="relative col-span-6 p-6">
                 <p>Your chat lasted&hellip;</p>
                 <p className="inline-block bg-gradient-to-r from-indigo-400 to-indigo-700 bg-clip-text text-2xl font-bold tracking-tight text-transparent">
-                  36 minutes
+                  {duration.join(' ')}
                 </p>
                 <ClockIcon className="absolute right-6 top-1/3 size-9" />
               </Card>
-              <Card className="col-span-3 p-6">
+              <Card className="col-span-6 p-6">
                 <p className="text-lg">Chat topic</p>
                 <p className="inline-block bg-gradient-to-r from-violet-400 to-violet-700 bg-clip-text text-2xl font-bold tracking-tight text-transparent">
-                  Code help
+                  {completion.topic}
                 </p>
               </Card>
             </div>
             <div className="grid grid-cols-7 gap-4">
               <Card className="col-span-3 p-6">
                 <p>Thanked ChatGPT?</p>
-                <p className="text-2xl font-bold tracking-tight text-red-500">
-                  No 🥲
+                <p
+                  className={cn(
+                    'text-2xl font-bold tracking-tight',
+                    thankedChatGPT ? 'text-green-500' : 'text-red-500'
+                  )}
+                >
+                  {thankedChatGPT ? 'Yes 👍' : 'No 🥲'}
                 </p>
               </Card>
               <Card className="col-span-4 p-6">
                 <p className="text-lg">💡 Your tone was&hellip;</p>
                 <p className="inline-block bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-2xl font-bold tracking-tight text-transparent">
-                  Neutral, curious
+                  {completion.tone}
+                  {/* Neutral, curious */}
                   {/* Polite, inquisitive */}
                 </p>
               </Card>
@@ -335,24 +358,23 @@ export function Stage({ chat }: { chat: Chat }) {
               <CardHeader>
                 <CardTitle>Conversation summary</CardTitle>
                 <CardDescription>
-                  You asked for help with a coding problem, and ChatGPT provided
+                  {completion.summary}
+                  {/* You asked for help with a coding problem, and ChatGPT provided
                   a detailed explanation of the solution. ChatGPT appears to
                   have been was and informative, and you were able to understand
-                  the solution.
+                  the solution. */}
                 </CardDescription>
               </CardHeader>
             </Card>
             <Card>
               <CardHeader>
                 <CardTitle>Suggested system prompt</CardTitle>
-                <p className="text-sm">
-                  You can use the following prompt to generate a similar chat:
-                </p>
                 <CardDescription className="text-base">
-                  Convert the provided OpenGL code snippet to use LWJGL 3.
+                  {completion.system_prompt}
+                  {/* Convert the provided OpenGL code snippet to use LWJGL 3.
                   Ensure that you have imported the necessary LWJGL classes,
                   such as org.lwjgl.opengl.GL11, and initialized your OpenGL
-                  context properly before calling these functions.
+                  context properly before calling these functions. */}
                 </CardDescription>
               </CardHeader>
             </Card>
