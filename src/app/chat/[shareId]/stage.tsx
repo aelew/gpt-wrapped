@@ -397,7 +397,7 @@ export function Stage({
             <Card>
               <CardHeader>
                 <CardTitle>Conversation summary</CardTitle>
-                <CardDescription>
+                <CardDescription className="select-text">
                   {completion.summary}
                   {/* You asked for help with a coding problem, and ChatGPT provided
                   a detailed explanation of the solution. ChatGPT appears to
@@ -409,7 +409,7 @@ export function Stage({
             <Card>
               <CardHeader>
                 <CardTitle>Suggested system prompt</CardTitle>
-                <CardDescription className="text-base">
+                <CardDescription className="select-text">
                   {completion.system_prompt}
                   {/* Convert the provided OpenGL code snippet to use LWJGL 3.
                   Ensure that you have imported the necessary LWJGL classes,
@@ -456,7 +456,7 @@ export function Stage({
                 >
                   Download image
                 </Button>
-                <Card className="mx-auto flex w-fit justify-center gap-6 px-4 py-2">
+                <Card className="mx-auto flex w-fit justify-center gap-6 px-4 py-2 bg-green-50">
                   <LinkedinShareButton
                     title="I just used GPT Wrapped to analyze my recent chat with ChatGPT! Try it for yourself: "
                     url="https://gpt-wrapped.vercel.app"
