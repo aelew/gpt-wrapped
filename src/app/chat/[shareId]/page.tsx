@@ -1,12 +1,10 @@
-import { ArrowRightIcon, ExternalLinkIcon } from 'lucide-react';
+import { ExternalLinkIcon } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-import { MotionSection } from '@/components/motion';
 import { Time } from '@/components/time';
-import { Button, buttonVariants } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-import { Stuff } from './stuff';
+import type { Chat } from '@/lib/types';
+import { Stage } from './stage';
 
 interface ConversationPageProps {
   params: {
@@ -30,38 +28,34 @@ export default async function ChatPage({ params }: ConversationPageProps) {
 
   // prettier-ignore
   const pageProps = JSON.parse(text.split(SCRIPT_TAG_PREFIX)[1].split(SCRIPT_TAG_SUFFIX)[0]);
-  const data = pageProps.props.pageProps.serverResponse.data;
-  console.log(data);
+  const chat: Chat = pageProps.props.pageProps.serverResponse.data;
 
   return (
-    <MotionSection
-      className="flex flex-col gap-6"
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-    >
-      <div className="flex flex-col items-center gap-3 text-center">
+    <>
+      <div className="flex flex-col items-center gap-2 text-center">
         <span className="text-6xl" aria-hidden>
           💬
         </span>
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-          Here is your wrapped!
+        <h1 className="text-4xl font-bold tracking-tight text-green-600">
+          Here&apos;s your wrapped!
         </h1>
-        <h2 className="max-w-sm text-4xl font-semibold tracking-tight">
-          {data.title}
-        </h2>
-        <div className="flex items-center text-muted-foreground">
-          <Time date={data.create_time * 1000} />
-          <Link
-            href={`https://chat.openai.com/share/${shareId}`}
-            className="mb-0.5 ml-2"
-            target="_blank"
-          >
-            <ExternalLinkIcon className="size-4" />
-          </Link>
+        <div className="text-center">
+          <h2 className="mx-auto max-w-sm text-2xl font-semibold tracking-tight">
+            {chat.title}
+          </h2>
+          <div className="flex items-center justify-center text-muted-foreground">
+            <Time date={chat.create_time * 1000} />
+            <Link
+              href={`https://chat.openai.com/share/${shareId}`}
+              className="mb-0.5 ml-2"
+              target="_blank"
+            >
+              <ExternalLinkIcon className="size-4" />
+            </Link>
+          </div>
         </div>
       </div>
-      <Stuff />
-    </MotionSection>
+      <Stage chat={chat} />
+    </>
   );
 }

@@ -1,20 +1,28 @@
 import Image from 'next/image';
 
 import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from '@/components/ui/dialog';
 import { ChatForm } from './chat-form';
 
 export default function HomePage() {
   return (
     <section className="flex flex-col">
       <Image
-        className="absolute left-36 hidden lg:block"
+        className="absolute left-36 hidden duration-1000 animate-in fade-in slide-in-from-bottom-6 lg:block"
         src="/_static/bubbles-left.gif"
         height={200}
         width={200}
         alt=""
       />
       <Image
-        className="absolute right-36 hidden translate-y-1/2 lg:block"
+        className="absolute right-36 hidden translate-y-1/2 duration-1000 animate-in fade-in lg:block"
         src="/_static/bubbles-right.gif"
         height={200}
         width={200}
@@ -35,9 +43,22 @@ export default function HomePage() {
         </p>
       </div>
       <ChatForm />
-      <Button className="group shadow" variant="outline">
-        I want insights on all my conversations!
-      </Button>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button className="group shadow" variant="outline">
+            I want insights on all my conversations!
+          </Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>I want insights on all my conversations!</DialogTitle>
+            <DialogDescription>
+              This feature isn&apos;t ready yet, but you can still get insights
+              on individual conversations!
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }

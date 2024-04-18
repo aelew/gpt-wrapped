@@ -44,3 +44,19 @@
     @apply bg-background text-foreground;
   }
 }
+
+.splide__pagination__page.is-active {
+  @apply bg-green-500 !important;
+}
+
+.splide__arrow svg {
+  @apply fill-green-500/50 hover:fill-green-500 !important;
+}
+
+.splide__slide {
+  @apply h-[60vh] !important;
+}
+
+.splide__slide > div {
+  @apply mx-4;
+}

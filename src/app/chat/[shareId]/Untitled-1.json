@@ -26,9 +26,7 @@
           "metadata": {
             "finish_details": {
               "type": "stop",
-              "stop_tokens": [
-                100260
-              ]
+              "stop_tokens": [100260]
             },
             "citations": [],
             "is_complete": true,
@@ -70,9 +68,7 @@
           "recipient": "all"
         },
         "parent": "87393f8c-dca8-4d71-8e29-104996ba1af4",
-        "children": [
-          "020dc628-247e-4c92-b2ad-c155ad7a0dec"
-        ]
+        "children": ["020dc628-247e-4c92-b2ad-c155ad7a0dec"]
       },
       "87393f8c-dca8-4d71-8e29-104996ba1af4": {
         "id": "87393f8c-dca8-4d71-8e29-104996ba1af4",
@@ -95,9 +91,7 @@
           "metadata": {
             "finish_details": {
               "type": "stop",
-              "stop_tokens": [
-                100260
-              ]
+              "stop_tokens": [100260]
             },
             "citations": [],
             "is_complete": true,
@@ -112,9 +106,7 @@
           "recipient": "all"
         },
         "parent": "aaa2c670-e0be-4762-b8d5-9949a71adbee",
-        "children": [
-          "aaa29d20-a7bc-429a-abdb-0874e124ade1"
-        ]
+        "children": ["aaa29d20-a7bc-429a-abdb-0874e124ade1"]
       },
       "aaa2c670-e0be-4762-b8d5-9949a71adbee": {
         "id": "aaa2c670-e0be-4762-b8d5-9949a71adbee",
@@ -141,9 +133,7 @@
           "recipient": "all"
         },
         "parent": "84e60cc6-d42c-4a57-abab-6e6da9c7e39f",
-        "children": [
-          "87393f8c-dca8-4d71-8e29-104996ba1af4"
-        ]
+        "children": ["87393f8c-dca8-4d71-8e29-104996ba1af4"]
       },
       "84e60cc6-d42c-4a57-abab-6e6da9c7e39f": {
         "id": "84e60cc6-d42c-4a57-abab-6e6da9c7e39f",
@@ -166,9 +156,7 @@
           "metadata": {
             "finish_details": {
               "type": "stop",
-              "stop_tokens": [
-                100260
-              ]
+              "stop_tokens": [100260]
             },
             "citations": [],
             "is_complete": true,
@@ -183,9 +171,7 @@
           "recipient": "all"
         },
         "parent": "aaa223f8-5a07-4843-abec-a5709c50f45c",
-        "children": [
-          "aaa2c670-e0be-4762-b8d5-9949a71adbee"
-        ]
+        "children": ["aaa2c670-e0be-4762-b8d5-9949a71adbee"]
       },
       "aaa223f8-5a07-4843-abec-a5709c50f45c": {
         "id": "aaa223f8-5a07-4843-abec-a5709c50f45c",
@@ -212,9 +198,7 @@
           "recipient": "all"
         },
         "parent": "24c352ab-8526-46e2-a538-dad2276cbc80",
-        "children": [
-          "84e60cc6-d42c-4a57-abab-6e6da9c7e39f"
-        ]
+        "children": ["84e60cc6-d42c-4a57-abab-6e6da9c7e39f"]
       },
       "24c352ab-8526-46e2-a538-dad2276cbc80": {
         "id": "24c352ab-8526-46e2-a538-dad2276cbc80",
@@ -226,9 +210,7 @@
           },
           "content": {
             "content_type": "text",
-            "parts": [
-              ""
-            ]
+            "parts": [""]
           },
           "status": "finished_successfully",
           "end_turn": true,
@@ -240,15 +222,11 @@
           "recipient": "all"
         },
         "parent": "aaa16934-e804-403a-aaf1-d2e1ac3bb58e",
-        "children": [
-          "aaa223f8-5a07-4843-abec-a5709c50f45c"
-        ]
+        "children": ["aaa223f8-5a07-4843-abec-a5709c50f45c"]
       },
       "aaa16934-e804-403a-aaf1-d2e1ac3bb58e": {
         "id": "aaa16934-e804-403a-aaf1-d2e1ac3bb58e",
-        "children": [
-          "24c352ab-8526-46e2-a538-dad2276cbc80"
-        ]
+        "children": ["24c352ab-8526-46e2-a538-dad2276cbc80"]
       }
     },
     "moderation_results": [],
@@ -260,9 +238,7 @@
     "linear_conversation": [
       {
         "id": "aaa16934-e804-403a-aaf1-d2e1ac3bb58e",
-        "children": [
-          "24c352ab-8526-46e2-a538-dad2276cbc80"
-        ]
+        "children": ["24c352ab-8526-46e2-a538-dad2276cbc80"]
       },
       {
         "id": "24c352ab-8526-46e2-a538-dad2276cbc80",
@@ -274,9 +250,7 @@
           },
           "content": {
             "content_type": "text",
-            "parts": [
-              ""
-            ]
+            "parts": [""]
           },
           "status": "finished_successfully",
           "end_turn": true,
@@ -288,9 +262,7 @@
           "recipient": "all"
         },
         "parent": "aaa16934-e804-403a-aaf1-d2e1ac3bb58e",
-        "children": [
-          "aaa223f8-5a07-4843-abec-a5709c50f45c"
-        ]
+        "children": ["aaa223f8-5a07-4843-abec-a5709c50f45c"]
       },
       {
         "id": "aaa223f8-5a07-4843-abec-a5709c50f45c",
@@ -317,9 +289,7 @@
           "recipient": "all"
         },
         "parent": "24c352ab-8526-46e2-a538-dad2276cbc80",
-        "children": [
-          "84e60cc6-d42c-4a57-abab-6e6da9c7e39f"
-        ]
+        "children": ["84e60cc6-d42c-4a57-abab-6e6da9c7e39f"]
       },
       {
         "id": "84e60cc6-d42c-4a57-abab-6e6da9c7e39f",
@@ -342,9 +312,7 @@
           "metadata": {
             "finish_details": {
               "type": "stop",
-              "stop_tokens": [
-                100260
-              ]
+              "stop_tokens": [100260]
             },
             "citations": [],
             "is_complete": true,
@@ -359,9 +327,7 @@
           "recipient": "all"
         },
         "parent": "aaa223f8-5a07-4843-abec-a5709c50f45c",
-        "children": [
-          "aaa2c670-e0be-4762-b8d5-9949a71adbee"
-        ]
+        "children": ["aaa2c670-e0be-4762-b8d5-9949a71adbee"]
       },
       {
         "id": "aaa2c670-e0be-4762-b8d5-9949a71adbee",
@@ -388,9 +354,7 @@
           "recipient": "all"
         },
         "parent": "84e60cc6-d42c-4a57-abab-6e6da9c7e39f",
-        "children": [
-          "87393f8c-dca8-4d71-8e29-104996ba1af4"
-        ]
+        "children": ["87393f8c-dca8-4d71-8e29-104996ba1af4"]
       },
       {
         "id": "87393f8c-dca8-4d71-8e29-104996ba1af4",
@@ -413,9 +377,7 @@
           "metadata": {
             "finish_details": {
               "type": "stop",
-              "stop_tokens": [
-                100260
-              ]
+              "stop_tokens": [100260]
             },
             "citations": [],
             "is_complete": true,
@@ -430,9 +392,7 @@
           "recipient": "all"
         },
         "parent": "aaa2c670-e0be-4762-b8d5-9949a71adbee",
-        "children": [
-          "aaa29d20-a7bc-429a-abdb-0874e124ade1"
-        ]
+        "children": ["aaa29d20-a7bc-429a-abdb-0874e124ade1"]
       },
       {
         "id": "aaa29d20-a7bc-429a-abdb-0874e124ade1",
@@ -459,9 +419,7 @@
           "recipient": "all"
         },
         "parent": "87393f8c-dca8-4d71-8e29-104996ba1af4",
-        "children": [
-          "020dc628-247e-4c92-b2ad-c155ad7a0dec"
-        ]
+        "children": ["020dc628-247e-4c92-b2ad-c155ad7a0dec"]
       },
       {
         "id": "020dc628-247e-4c92-b2ad-c155ad7a0dec",
@@ -484,9 +442,7 @@
           "metadata": {
             "finish_details": {
               "type": "stop",
-              "stop_tokens": [
-                100260
-              ]
+              "stop_tokens": [100260]
             },
             "citations": [],
             "is_complete": true,
@@ -511,9 +467,7 @@
       "max_tokens": 8191,
       "title": "Default (GPT-3.5)",
       "description": "Our fastest model, great for most everyday tasks.",
-      "tags": [
-        "gpt3.5"
-      ]
+      "tags": ["gpt3.5"]
     },
     "moderation_state": {
       "has_been_moderated": false,
