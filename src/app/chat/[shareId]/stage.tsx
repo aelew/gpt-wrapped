@@ -1,7 +1,6 @@
 'use client';
 
 import {
-  SiGmail,
   SiLinkedin,
   SiReddit,
   SiTelegram,
@@ -15,7 +14,6 @@ import { ClockIcon } from 'lucide-react';
 import Link from 'next/link';
 import { useCallback, useRef, useState } from 'react';
 import {
-  EmailShareButton,
   LinkedinShareButton,
   RedditShareButton,
   TelegramShareButton,
@@ -23,7 +21,7 @@ import {
 } from 'react-share';
 
 import { MotionDiv } from '@/components/motion';
-import NumberTicker from '@/components/number-ticker';
+import { NumberTicker } from '@/components/number-ticker';
 import { Button, buttonVariants } from '@/components/ui/button';
 import {
   Card,
@@ -46,6 +44,8 @@ import '@splidejs/react-splide/css/sea-green';
 import Image from 'next/image';
 import { toast } from 'sonner';
 
+import { PERSONALITIES } from '@/lib/constants/personalities';
+
 export function Stage({
   chat,
   completion
@@ -57,6 +57,7 @@ export function Stage({
     summary: string;
     summary_comment: string;
     system_prompt: string;
+    personality: keyof typeof PERSONALITIES;
   };
 }) {
   function calculateChatDuration() {
@@ -83,7 +84,7 @@ export function Stage({
       s += `second${seconds !== 1 ? 's' : ''}`;
     }
 
-    return [number, s] as const;
+    return [parseFloat(number.toFixed(2)), s] as const;
   }
 
   function compileUserMessagesToString() {
@@ -123,6 +124,45 @@ export function Stage({
         console.log(err);
       });
   }, [ref]);
+
+  const personality = (
+    <div className="relative isolate h-fit overflow-hidden bg-gray-900 p-6 shadow-2xl sm:rounded-3xl">
+      <svg
+        viewBox="0 0 1024 1024"
+        className="absolute left-1/2 top-1/2 -z-10 h-96 w-96 -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
+        aria-hidden="true"
+      >
+        <circle
+          cx="512"
+          cy="512"
+          r="512"
+          fill="url(#759c1415-0410-454c-8f7c-9a820de03641)"
+          fillOpacity="0.7"
+        />
+        <defs>
+          <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
+            <stop stopColor="#7775D6" />
+            <stop offset="1" stopColor="#E935C1" />
+          </radialGradient>
+        </defs>
+      </svg>
+      <div className="flex justify-between gap-6">
+        <div>
+          <p className="text-lg font-medium text-white">Your personality</p>
+          <h2 className="bg-gradient-to-br from-white to-slate-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent">
+            {completion.personality}
+          </h2>
+        </div>
+        <Image
+          src={`/_static/personalities/${completion.personality.toLowerCase().replaceAll(' ', '-')}.jpg`}
+          alt={completion.personality}
+          className="rounded-lg"
+          height={64}
+          width={64}
+        />
+      </div>
+    </div>
+  );
 
   return (
     <div className="mx-auto max-w-2xl">
@@ -175,7 +215,7 @@ export function Stage({
               className="max-w-md rounded-xl bg-black/60 p-1 text-center text-lg leading-6 text-muted-foreground text-white"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ delay: 3.5 }}
+              transition={{ delay: 2 }}
             >
               {duration[1].startsWith('second') || duration[0] < 3
                 ? "Blink and you'll miss it — your chat session, that is. Speedy Gonzalez has nothing on you. Was that a chat or a race?"
@@ -247,7 +287,7 @@ export function Stage({
             <Card className="flex min-w-72 items-center justify-between gap-8 p-5">
               <div>
                 <p className="text-lg">Chat topic</p>
-                <p className="inline-block bg-gradient-to-r from-violet-400 to-violet-700 bg-clip-text text-3xl font-bold tracking-tight text-transparent">
+                <p className="inline-block whitespace-nowrap bg-gradient-to-r from-violet-400 to-violet-700 bg-clip-text text-3xl font-bold tracking-tight text-transparent">
                   {completion.topic}
                 </p>
               </div>
@@ -298,6 +338,19 @@ export function Stage({
           </div>
         </SplideSlide>
         <SplideSlide>
+          <div className="flex h-full flex-col items-center justify-center gap-6">
+            {personality}
+            <motion.p
+              className="max-w-md rounded-xl bg-black/60 p-2 text-center leading-5 text-muted-foreground text-white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 1 }}
+            >
+              {PERSONALITIES[completion.personality]}
+            </motion.p>
+          </div>
+        </SplideSlide>
+        <SplideSlide>
           <MotionDiv
             className="grid h-full gap-4 overflow-y-scroll"
             initial={{ opacity: 0 }}
@@ -305,22 +358,15 @@ export function Stage({
             ref={ref}
           >
             <div className="grid grid-cols-12 gap-4">
+              <div className="col-span-12">{personality}</div>
               <Card className="relative col-span-6 p-6">
                 <p>Your chat lasted&hellip;</p>
-                <p className="inline-block bg-gradient-to-r from-indigo-400 to-indigo-700 bg-clip-text text-2xl font-bold tracking-tight text-transparent">
+                <p className="inline-block bg-gradient-to-r from-indigo-400 to-blue-700 bg-clip-text text-2xl font-bold tracking-tight text-transparent">
                   {duration.join(' ')}
                 </p>
                 <ClockIcon className="absolute right-6 top-1/3 size-9" />
               </Card>
               <Card className="col-span-6 p-6">
-                <p className="text-lg">Chat topic</p>
-                <p className="inline-block bg-gradient-to-r from-violet-400 to-violet-700 bg-clip-text text-2xl font-bold tracking-tight text-transparent">
-                  {completion.topic}
-                </p>
-              </Card>
-            </div>
-            <div className="grid grid-cols-7 gap-4">
-              <Card className="col-span-3 p-6">
                 <p>Thanked ChatGPT?</p>
                 <p
                   className={cn(
@@ -331,12 +377,20 @@ export function Stage({
                   {thankedChatGPT ? 'Yes 👍' : 'No 🥲'}
                 </p>
               </Card>
-              <Card className="col-span-4 p-6">
+            </div>
+            <div className="grid grid-cols-7 gap-4">
+              <Card className="col-span-3 p-6">
                 <p className="text-lg">💡 Your tone was&hellip;</p>
                 <p className="inline-block bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-2xl font-bold tracking-tight text-transparent">
                   {completion.tone}
                   {/* Neutral, curious */}
                   {/* Polite, inquisitive */}
+                </p>
+              </Card>
+              <Card className="col-span-4 p-6">
+                <p className="text-lg">Chat topic</p>
+                <p className="inline-block whitespace-nowrap bg-gradient-to-r from-violet-400 to-violet-700 bg-clip-text text-2xl font-bold tracking-tight text-transparent">
+                  {completion.topic}
                 </p>
               </Card>
             </div>

@@ -42,6 +42,16 @@ export default function HomePage() {
           your prompts and what they reveal about you.
         </p>
       </div>
+      <video
+        className="mb-6 rounded-lg shadow-lg"
+        width={400}
+        autoPlay
+        muted
+        loop
+      >
+        <source src="/_static/share-demo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <ChatForm />
       <Dialog>
         <DialogTrigger asChild>
