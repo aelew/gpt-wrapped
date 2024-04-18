@@ -60,20 +60,15 @@ export function Stage({
   };
 }) {
   function calculateChatDuration() {
-    // Assuming chatData is the JSON object you provided
     const messages = chat.linear_conversation.filter(
       (c) => c.message?.create_time
     );
 
-    const startTime = messages[0].message!.create_time; // Start time of the chat
-    const endTime = messages[messages.length - 1].message!.create_time; // End time of the chat
+    const startTime = messages[0].message!.create_time;
+    const endTime = messages[messages.length - 1].message!.create_time;
 
-    console.log(startTime, endTime);
-
-    // Calculate duration in seconds
     const durationInSeconds = endTime - startTime;
 
-    // Convert duration to hours, minutes, and seconds
     const minutes = Math.floor(durationInSeconds / 60);
     const seconds = durationInSeconds % 60;
 
@@ -92,27 +87,18 @@ export function Stage({
   }
 
   function compileUserMessagesToString() {
-    // Initialize an empty string to hold all user messages
     let compiledMessage = '';
 
-    // Check if the 'linear_conversation' property exists
-    if (chat.linear_conversation) {
-      // Iterate through each item in the linear_conversation array
-      chat.linear_conversation.forEach((item) => {
-        // Check if the 'message' property exists and the 'author' role is 'user'
-        if (item.message && item.message.author.role === 'user') {
-          // Check if the 'content' property and 'parts' array exist
-          if (item.message.content && item.message.content.parts) {
-            // Concatenate each part of the message to the compiledMessage string
-            item.message.content.parts.forEach((part) => {
-              compiledMessage += part + ' ';
-            });
-          }
+    chat.linear_conversation.forEach((item) => {
+      if (item.message && item.message.author.role === 'user') {
+        if (item.message.content && item.message.content.parts) {
+          item.message.content.parts.forEach((part) => {
+            compiledMessage += part + ' ';
+          });
         }
-      });
-    }
+      }
+    });
 
-    // Trim the final string to remove any trailing spaces
     return compiledMessage.trim().toLowerCase();
   }
 
