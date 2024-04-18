@@ -19,6 +19,7 @@ export default function HomePage() {
         src="/_static/bubbles-left.gif"
         height={200}
         width={200}
+        unoptimized
         alt=""
       />
       <Image
@@ -26,6 +27,7 @@ export default function HomePage() {
         src="/_static/bubbles-right.gif"
         height={200}
         width={200}
+        unoptimized
         alt=""
       />
       <div className="mb-6 flex flex-col items-center gap-3 text-center">
